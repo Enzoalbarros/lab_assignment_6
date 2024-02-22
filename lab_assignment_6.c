@@ -6,17 +6,17 @@ int search(int numbers[], int low, int high, int value) {
         // Base case: value not found
         return -1;
     }
-
-    int mid = low + (high - low) / 2; // Calculate the middle index
+    // Calculate the middle index
+    int mid = low + (high - low) / 2;
 
     if (numbers[mid] == value) {
-        // If value is found at middle index
+        // If a value is found at the middle index
         return mid;
     } else if (numbers[mid] > value) {
-        // If value is smaller than the middle element, search in the left half
+        // If the value is smaller than the middle element, search in the left half
         return search(numbers, low, mid - 1, value);
     } else {
-        // If value is larger than the middle element, search in the right half
+        // If the value is larger than the middle element, search in the right half
         return search(numbers, mid + 1, high, value);
     }
 }
